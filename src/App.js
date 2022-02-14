@@ -6,6 +6,7 @@ import Explore from "./pages/explore/Explore";
 import CreatePost from "./pages/createPost/CreatePost";
 import Navbar from "./components/navbar/Navbar";
 import CreateAccount from "./pages/login/CreateAccount";
+import ReadPost from "./pages/readPost/ReadPost";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Explore />} />
           <Route path="/createpost" element={<CreatePost />} />
           <Route path="/createaccount" element={<CreateAccount />} />
+          <Route path="/readpost" element={<ReadPost />} />
         </Routes>
       </Router>
     </div>

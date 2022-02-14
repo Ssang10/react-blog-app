@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { GlobalContext } from "../../context/GlobalState";
 import handleGetDocs from "../../firebase/services/firestore/getDocs";
 
 import "./explore.css";
 
 const Explore = () => {
+  const { setReadPost } = useContext(GlobalContext);
+
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -15,11 +19,7 @@ const Explore = () => {
   }, []);
 
   const postText = (text) => {
-    if (text.length < 70) {
-      return text;
-    } else {
-      return text.split("").filter((letter, index) => index < 100);
-    }
+    return text.split("").filter((letter, index) => index < 120);
   };
 
   return (
@@ -30,8 +30,16 @@ const Explore = () => {
             <section key={post.id} className="explore-post">
               <h2 className="post-title">{post.title}</h2>
               <h5 className="post-author">@{post.author.name}</h5>
-              <p>{postText(post.postText)}</p>
-              {post.postText.length > 70 && <button>read more</button>}
+              <p>
+                {postText(post.postText)}
+                {post.postText.length > 120 && (
+                  <button className="btn-read-more">
+                    <Link to="/readpost" onClick={() => setReadPost(post)}>
+                      Read More
+                    </Link>
+                  </button>
+                )}
+              </p>
             </section>
           ))}
         </div>

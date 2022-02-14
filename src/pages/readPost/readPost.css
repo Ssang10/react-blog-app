@@ -1,0 +1,8 @@
+.post {
+  width: 80%;
+  line-height: 20px;
+  margin: 40px auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: solid whitesmoke 2px;
+}
