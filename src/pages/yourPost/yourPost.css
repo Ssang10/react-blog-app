@@ -1,0 +1,22 @@
+.your-posts-post {
+  max-width: 450px;
+  line-height: 20px;
+  margin: 40px auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: solid whitesmoke 2px;
+}
+
+.post-author span {
+  font-size: 18px;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.no-uploads {
+  margin: 30px;
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+.explore-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.explore-post {
+  width: 80%;
+  line-height: 20px;
+  height: 165px;
+  margin: 40px auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: solid whitesmoke 2px;
+}
+
+.post-title {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.post-author {
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 100px;
+}

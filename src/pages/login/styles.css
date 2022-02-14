@@ -1,0 +1,55 @@
+.login-page {
+  max-width: 370px;
+  margin: 40px auto;
+  padding: 35px 50px;
+  border-radius: 8px;
+  border: solid whitesmoke 2px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 5px black;
+}
+
+/* Login only */
+.create-account-link {
+  cursor: pointer;
+  text-align: center;
+}
+
+.icon {
+  font-size: 30px;
+  margin: 5px 20px;
+  cursor: pointer;
+}
+
+.login-icons {
+  text-align: center;
+}
+
+.or-line {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  margin: 25px 0px;
+}
+
+.or-line span {
+  background: #fff;
+  padding: 0 15px;
+}
