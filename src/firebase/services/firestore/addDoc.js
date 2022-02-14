@@ -6,6 +6,10 @@ const handleAddDoc = async (title, postText) => {
     await addDoc(collection(db, "posts"), {
       title,
       postText,
+      date: {
+        time: new Date().getTime(),
+        fullDate: new Date().toString(),
+      },
       author: {
         name: auth.currentUser.displayName,
         email: auth.currentUser.email,
