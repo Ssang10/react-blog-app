@@ -31,16 +31,20 @@ const YourPost = () => {
       {posts === "No Posts" ? (
         <h2 className="no-uploads">No Uploads</h2>
       ) : posts.length > 0 ? (
-        posts.map((post) => (
-          <section key={post.id} className="your-posts-post">
-            <h2 className="post-title">{post.title}</h2>
-            <p>{post.postText}</p>
-            <h5 className="post-author">
-              <span>@You</span> ({post.author.name})
-            </h5>
-            <button onClick={() => handleDeletePost(post.id)}>&#128465;</button>
-          </section>
-        ))
+        posts
+          .sort((a, b) => b.date.time - a.date.time)
+          .map((post) => (
+            <section key={post.id} className="your-posts-post">
+              <h2 className="post-title">{post.title}</h2>
+              <p>{post.postText}</p>
+              <h5 className="post-author">
+                <span>@You</span> ({post.author.name})
+              </h5>
+              <button onClick={() => handleDeletePost(post.id)}>
+                &#128465;
+              </button>
+            </section>
+          ))
       ) : (
         <h2 className="loading">Loading...</h2>
       )}

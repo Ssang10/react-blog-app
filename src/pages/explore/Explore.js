@@ -26,22 +26,24 @@ const Explore = () => {
     <div>
       {posts.length > 0 ? (
         <div className="explore-page">
-          {posts.map((post) => (
-            <section key={post.id} className="explore-post">
-              <h2 className="post-title">{post.title}</h2>
-              <h5 className="post-author">@{post.author.name}</h5>
-              <p>
-                {postText(post.postText)}
-                {post.postText.length > 120 && (
-                  <button className="btn-read-more">
-                    <Link to="/readpost" onClick={() => setReadPost(post)}>
-                      Read More
-                    </Link>
-                  </button>
-                )}
-              </p>
-            </section>
-          ))}
+          {posts
+            .sort((a, b) => b.date.time - a.date.time)
+            .map((post) => (
+              <section key={post.id} className="explore-post">
+                <h2 className="post-title">{post.title}</h2>
+                <h5 className="post-author">@{post.author.name}</h5>
+                <p>
+                  {postText(post.postText)}
+                  {post.postText.length > 120 && (
+                    <button className="btn-read-more">
+                      <Link to="/readpost" onClick={() => setReadPost(post)}>
+                        Read More
+                      </Link>
+                    </button>
+                  )}
+                </p>
+              </section>
+            ))}
         </div>
       ) : (
         <h2 className="loading">Loading...</h2>
