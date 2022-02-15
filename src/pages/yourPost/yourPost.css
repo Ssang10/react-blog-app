@@ -1,14 +1,15 @@
-.your-posts-post {
-  max-width: 450px;
-  line-height: 20px;
-  margin: 40px auto;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: solid whitesmoke 2px;
+.your-posts {
+  margin: 0 30px;
 }
 
-.post-author span {
-  font-size: 18px;
+.your-posts-post {
+  max-width: 550px;
+  line-height: 25px;
+  margin: 40px auto;
+  padding: 15px 20px 45px;
+  border-radius: 8px;
+  border: solid whitesmoke 2px;
+  word-break: break-word;
 }
 
 .loading {
@@ -19,4 +20,11 @@
 .no-uploads {
   margin: 30px;
   text-align: center;
+}
+
+.delete-btn {
+  cursor: pointer;
+  font-size: 30px;
+  float: right;
+  color: rgb(197, 49, 49);
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../../firebase/firebase-config";
 import handleDeleteDoc from "../../firebase/services/firestore/deleteDoc";
 import handleGetDocs from "../../firebase/services/firestore/getDocs";
+import { MdDeleteForever } from "react-icons/md";
 
 import "./yourPost.css";
 
@@ -27,7 +28,7 @@ const YourPost = () => {
   };
 
   return (
-    <div>
+    <div className="your-posts">
       {posts === "No Posts" ? (
         <h2 className="no-uploads">No Uploads</h2>
       ) : posts.length > 0 ? (
@@ -37,12 +38,11 @@ const YourPost = () => {
             <section key={post.id} className="your-posts-post">
               <h2 className="post-title">{post.title}</h2>
               <p>{post.postText}</p>
-              <h5 className="post-author">
-                <span>@You</span> ({post.author.name})
-              </h5>
-              <button onClick={() => handleDeletePost(post.id)}>
-                &#128465;
-              </button>
+
+              <MdDeleteForever
+                className="delete-btn"
+                onClick={() => handleDeletePost(post.id)}
+              />
             </section>
           ))
       ) : (

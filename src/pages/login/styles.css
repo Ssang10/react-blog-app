@@ -29,6 +29,10 @@ h2 {
   cursor: pointer;
   text-align: center;
 }
+.create-account-link:hover {
+  font-size: 16.2px;
+  color: rgb(48, 19, 117);
+}
 
 .icon {
   font-size: 30px;
