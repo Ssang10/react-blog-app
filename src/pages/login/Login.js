@@ -8,6 +8,7 @@ import "./styles.css";
 import handleGoogleSignin from "../../firebase/services/auth/googleAuth";
 import { GlobalContext } from "../../context/GlobalState";
 import handleFBSignin from "../../firebase/services/auth/fbAuth";
+import handleGitHubSignin from "../../firebase/services/auth/githubAuth";
 
 const Login = () => {
   const { setIsAuth } = useContext(GlobalContext);
@@ -17,7 +18,9 @@ const Login = () => {
   const handleSignIn = async (provider) => {
     let user = await (provider === "google"
       ? handleGoogleSignin()
-      : handleFBSignin());
+      : provider === "fb"
+      ? handleFBSignin()
+      : handleGitHubSignin());
     if (user) {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
@@ -35,7 +38,7 @@ const Login = () => {
           onClick={() => handleSignIn("fb")}
           style={{ color: " #3b5998" }}
         />
-        <FaGithub className="icon" />
+        <FaGithub className="icon" onClick={() => handleSignIn("github")} />
       </section>
       <p className="or-line">
         <span>or</span>{" "}

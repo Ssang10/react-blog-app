@@ -3,6 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import {
   FacebookAuthProvider,
   getAuth,
+  GithubAuthProvider,
   GoogleAuthProvider,
 } from "firebase/auth";
 
@@ -23,5 +24,6 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const fbProvider = new FacebookAuthProvider();
+const gitHubProvider = new GithubAuthProvider();
 
-export { db, auth, googleProvider, fbProvider };
+export { db, auth, googleProvider, fbProvider, gitHubProvider };
