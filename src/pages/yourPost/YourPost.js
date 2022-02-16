@@ -13,7 +13,7 @@ const YourPost = () => {
     const gettingData = async () => {
       let docs = await handleGetDocs();
       let filteredDocs = docs.filter(
-        (doc) => auth.currentUser.displayName === doc.author.name
+        (doc) => auth.currentUser.uid === doc.author.id
       );
       setPosts(filteredDocs.length > 0 ? filteredDocs : "No Posts");
     };
