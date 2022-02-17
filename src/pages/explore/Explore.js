@@ -22,6 +22,11 @@ const Explore = () => {
     return text.split("").filter((letter, index) => index < 120);
   };
 
+  const postDate = (fullDate) => {
+    return `${fullDate.split(" ").splice(1, 2).join(" ")}, 
+      ${fullDate.split(" ").splice(3, 1).join(" ")}`;
+  };
+
   return (
     <div>
       {posts.length > 0 ? (
@@ -31,8 +36,9 @@ const Explore = () => {
             .map((post) => (
               <section key={post.id} className="explore-post">
                 <h2 className="post-title">{post.title}</h2>
-                <h5 className="post-author">@{post.author.name}</h5>
-                <p>
+                <h4 className="post-author">{post.author.name}</h4>
+                <h4 className="post-date">{postDate(post.date.fullDate)}</h4>
+                <p className="post-text">
                   {postText(post.postText)}
                   {post.postText.length > 120 && (
                     <button className="btn-read-more">
