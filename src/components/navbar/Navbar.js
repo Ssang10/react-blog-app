@@ -27,12 +27,9 @@ const Navbar = () => {
       <div>
         <Link to="/">Explore</Link>
         {isAuth && <Link to="/yourposts">Your Posts</Link>}
-
+        <Link to="/createpost">Create Post</Link>
         {isAuth ? (
-          <>
-            <Link to="/createpost">Create Post</Link>
-            <a onClick={handleSignOut}>Logout</a>
-          </>
+          <a onClick={handleSignOut}>Logout</a>
         ) : (
           <Link to="/login">Login</Link>
         )}

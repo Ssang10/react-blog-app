@@ -36,3 +36,8 @@ textarea {
 .btn:hover {
   box-shadow: 1px 1px 5px black;
 }
+
+.create-post-login {
+  margin: 50px auto;
+  text-align: center;
+}
