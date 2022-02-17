@@ -16,4 +16,10 @@ a {
   margin: 15px;
   padding: 5px;
   cursor: pointer;
+  font-family: "Varela Round", sans-serif;
+}
+
+h1 {
+  font-family: "Staatliches", cursive;
+  font-size: 35px;
 }
