@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.link-container {
+  display: flex;
+}
+
+a {
+  font-size: 90%;
+}

@@ -1,38 +1,21 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { GlobalContext } from "../../context/GlobalState";
-import logout from "../../firebase/services/auth/logout";
-
+import React, { useState } from "react";
+import NavMenu from "./navMenu/NavMenu";
+import NavMenuMobile from "./navMenuMobile/NavMenuMobile";
+import { CgMenu } from "react-icons/cg";
 import "./navbar.css";
 
 const Navbar = () => {
-  const { isAuth, setIsAuth } = useContext(GlobalContext);
-
-  const navigate = useNavigate();
-
-  const handleSignOut = async () => {
-    let signedOut = await logout();
-
-    if (signedOut) {
-      localStorage.clear();
-      setIsAuth(false);
-      navigate("login");
-    }
-  };
+  const [open, setOpen] = useState(false);
 
   return (
     <nav className="nav-bar">
-      <h1>My Blog</h1>
-
-      <div>
-        <Link to="/">Explore</Link>
-        {isAuth && <Link to="/yourposts">Your Posts</Link>}
-        <Link to="/createpost">Create Post</Link>
-        {isAuth ? (
-          <a onClick={handleSignOut}>Logout</a>
-        ) : (
-          <Link to="/login">Login</Link>
-        )}
+      <h1 className="blog-heading">My Blog</h1>
+      <div className="normal-menu">
+        <NavMenu />
+      </div>
+      <div className="mobile-menu">
+        <CgMenu className="hamburger" onClick={() => setOpen(!open)} />
+        {open && <NavMenuMobile />}
       </div>
     </nav>
   );
