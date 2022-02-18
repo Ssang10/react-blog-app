@@ -55,3 +55,24 @@
 .btn-read-more a {
   margin: 0;
 }
+
+@media (max-width: 850px) {
+  .explore-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .explore-page {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .explore-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
