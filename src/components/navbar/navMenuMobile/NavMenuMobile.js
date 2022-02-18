@@ -5,7 +5,7 @@ import logout from "../../../firebase/services/auth/logout";
 
 import "./navMenuMobile.css";
 
-const NavMenuMobile = () => {
+const NavMenuMobile = ({ setOpen }) => {
   const { isAuth, setIsAuth } = useContext(GlobalContext);
 
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const NavMenuMobile = () => {
   };
 
   return (
-    <nav className="menu-mobile">
+    <nav className="menu-mobile" onClick={() => setOpen(false)}>
       <div className="link-container">
         <Link to="/">Explore</Link>
       </div>
