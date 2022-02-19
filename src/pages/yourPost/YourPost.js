@@ -27,6 +27,11 @@ const YourPost = () => {
     setPosts(newPosts.length > 0 ? newPosts : "No Posts");
   };
 
+  const postDate = (fullDate) => {
+    return `${fullDate.split(" ").splice(1, 2).join(" ")}, 
+      ${fullDate.split(" ").splice(3, 1).join(" ")}`;
+  };
+
   return (
     <div className="your-posts">
       {posts === "No Posts" ? (
@@ -37,6 +42,7 @@ const YourPost = () => {
           .map((post) => (
             <section key={post.id} className="your-posts-post">
               <h2 className="post-title">{post.title}</h2>
+              <h4 className="post-date">{postDate(post.date.fullDate)}</h4>
               <p>{post.postText}</p>
 
               <MdDeleteForever
