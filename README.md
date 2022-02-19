@@ -1,10 +1,10 @@
 # Live Website
 
-Open [React Weather App](https://react-blog-app-sang.netlify.app/) to view live website.
+Open [React Blog App](https://react-blog-app-sang.netlify.app/) to view live website.
 
 ## Authentication
 
-Firebase Authentication will not work in local host. For full functionality use live website.
+Firebase Authentication will not work in localhost. For full functionality use live website.
 
 # Getting Started with Create React App
 
