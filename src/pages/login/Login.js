@@ -44,13 +44,14 @@ const Login = () => {
         <span>or</span>{" "}
       </p>
       <EmailPassword />
-
-      <p
-        className="create-account-link"
-        onClick={() => navigate("/createaccount")}
-      >
-        I don't have an account
-      </p>
+      <section className="create-account-container">
+        <p
+          className="create-account-link"
+          onClick={() => navigate("/createaccount")}
+        >
+          I don't have an account
+        </p>
+      </section>
     </div>
   );
 };

@@ -25,12 +25,19 @@ h2 {
 }
 
 /* Login only */
+.create-account-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
 .create-account-link {
+  display: inline;
   cursor: pointer;
   text-align: center;
 }
+
 .create-account-link:hover {
-  font-size: 16.2px;
+  font-size: 115%;
   color: rgb(48, 19, 117);
 }
 
@@ -56,4 +63,10 @@ h2 {
 .or-line span {
   background: #fff;
   padding: 0 15px;
+}
+
+@media (max-width: 550px) {
+  .login-page {
+    border: none;
+  }
 }

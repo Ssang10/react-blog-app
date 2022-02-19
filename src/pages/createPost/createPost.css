@@ -31,6 +31,7 @@ textarea {
   border-radius: 9px;
   padding: 10px 16px;
   cursor: pointer;
+  font-size: 110%;
 }
 
 .btn:hover {
@@ -40,4 +41,14 @@ textarea {
 .create-post-login {
   margin: 50px auto;
   text-align: center;
+}
+
+.create-post-login .btn {
+  background-color: rgb(197, 49, 49);
+}
+
+@media (max-width: 550px) {
+  .create-post-page {
+    border: none;
+  }
 }

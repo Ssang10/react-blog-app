@@ -43,9 +43,11 @@ const EmailPassword = () => {
         minLength="6"
       />
       <br /> <br />
-      <button type="submit" className="btn">
-        Log In
-      </button>
+      <div className="btn-container">
+        <button type="submit" className="btn">
+          Log In
+        </button>
+      </div>
     </form>
   );
 };
