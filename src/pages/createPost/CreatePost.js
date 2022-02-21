@@ -13,7 +13,8 @@ const Createpost = () => {
   const [postText, setPostText] = useState("");
   const [postSubmited, setPostSubmited] = useState(false);
 
-  const handleCreatePost = async () => {
+  const handleCreatePost = async (e) => {
+    e.preventDefault();
     if (!postSubmited) {
       setPostSubmited(true);
       await handleAddDoc(title, postText);
@@ -26,26 +27,28 @@ const Createpost = () => {
       {isAuth ? (
         <>
           <h2>Create Post</h2>
-          <section className="create-post-input">
-            <label htmlFor="title">Title:</label>
-            <input
-              type="text"
-              id="title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </section>
-          <section className="create-post-input">
-            <label htmlFor="post">Post:</label>
-            <textarea
-              id="post"
-              value={postText}
-              onChange={(e) => setPostText(e.target.value)}
-            ></textarea>
-          </section>
-          <button className="btn" onClick={handleCreatePost}>
-            Submit Post
-          </button>
+          <form onSubmit={handleCreatePost}>
+            <section className="create-post-input">
+              <label htmlFor="title">Title:</label>
+              <input
+                type="text"
+                id="title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+              />
+            </section>
+            <section className="create-post-input">
+              <label htmlFor="post">Post:</label>
+              <textarea
+                id="post"
+                value={postText}
+                onChange={(e) => setPostText(e.target.value)}
+                required
+              ></textarea>
+            </section>
+            <button className="btn">Submit Post</button>
+          </form>
         </>
       ) : (
         <section className="create-post-login">

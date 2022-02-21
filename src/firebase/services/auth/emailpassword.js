@@ -26,7 +26,7 @@ const loginEmailPassword = async (email, password) => {
     .then((userCredential) => {
       user = userCredential.user;
     })
-    .catch((error) => console.log(error.message));
+    .catch(() => alert("Wrong Email or Password"));
 
   return user;
 };
