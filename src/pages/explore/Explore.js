@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import { GlobalContext } from "../../context/GlobalState";
 import handleGetDocs from "../../firebase/services/firestore/getDocs";
-
+import postDate from "../../utils/postDate";
 import "./explore.css";
 
 const Explore = () => {
@@ -20,11 +21,6 @@ const Explore = () => {
 
   const postText = (text) => {
     return text.split("").filter((letter, index) => index < 120);
-  };
-
-  const postDate = (fullDate) => {
-    return `${fullDate.split(" ").splice(1, 2).join(" ")}, 
-      ${fullDate.split(" ").splice(3, 1).join(" ")}`;
   };
 
   return (

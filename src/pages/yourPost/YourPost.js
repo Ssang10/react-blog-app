@@ -5,6 +5,7 @@ import handleGetDocs from "../../firebase/services/firestore/getDocs";
 import { MdDeleteForever } from "react-icons/md";
 
 import "./yourPost.css";
+import postDate from "../../utils/postDate";
 
 const YourPost = () => {
   const [posts, setPosts] = useState([]);
@@ -25,11 +26,6 @@ const YourPost = () => {
     handleDeleteDoc(id);
     let newPosts = posts.filter((post) => post.id !== id);
     setPosts(newPosts.length > 0 ? newPosts : "No Posts");
-  };
-
-  const postDate = (fullDate) => {
-    return `${fullDate.split(" ").splice(1, 2).join(" ")}, 
-      ${fullDate.split(" ").splice(3, 1).join(" ")}`;
   };
 
   return (
