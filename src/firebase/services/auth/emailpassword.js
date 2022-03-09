@@ -11,7 +11,7 @@ const createAccount = async (name, email, password) => {
     .then((userCredential) => {
       user = userCredential.user;
     })
-    .catch((error) => console.log(error.message));
+    .catch((error) => alert("Invalid Email. Please check your email."));
 
   await updateProfile(auth.currentUser, {
     displayName: name,
